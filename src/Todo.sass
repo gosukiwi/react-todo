@@ -1,0 +1,30 @@
+@import "variables"
+
+.Todo
+  padding: 1rem 2rem
+  transition: background-color .25s
+  display: flex
+
+  &__name
+    text-transform: capitalize
+    flex-grow: 1
+    cursor: pointer
+
+  &__checkbox
+    margin-right: .5rem
+    cursor: pointer
+
+  &__delete-button
+    background-color: $color-red
+    border: none
+    border-radius: 2px
+    color: white
+    cursor: pointer
+    transition: background-color .25s
+
+    &:hover
+      background-color: shade($color-red, 20%)
+
+  &:hover
+    background-color: #333
+
