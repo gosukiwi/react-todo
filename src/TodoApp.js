@@ -41,14 +41,14 @@ function TodoApp() {
     e.preventDefault();
   }
 
-  function onTodoChanged(todo) {
+  function handleTodoChanged(todo) {
     setTodos(todos.map((current) => {
       if (todo.id === current.id) current.completed = !current.completed
       return current
     }));
   }
 
-  function onDeleteClicked(todo) {
+  function handleTodoDeleteClicked(todo) {
     setTodos(todos.filter((current) => todo.id !== current.id));
   }
 
@@ -58,7 +58,7 @@ function TodoApp() {
         <div className="TodoApp__Empty">Nothing here!</div>
       }
 
-      {todos.map((todo, index) => <Todo key={index} todo={todo} onTodoChanged={onTodoChanged} onDeleteClicked={onDeleteClicked} />)}
+      {todos.map((todo, index) => <Todo key={index} todo={todo} onTodoChanged={handleTodoChanged} onDeleteClicked={handleTodoDeleteClicked} />)}
 
       <div className="TodoInput">
         <input className="TodoInput__input" ref={todoNameInput} type="text" placeholder="New Todo" />
